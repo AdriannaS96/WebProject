@@ -1,0 +1,56 @@
+{{> header}}
+{{> nav}}
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Pantry</h1>
+    <h2 class="mb-3">Browse Currently Available Items</h2>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <form action="/products" method="GET">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Show Products</button>
+            </form>
+        </div>
+    </div>
+
+    <h2 class="mb-3">Book Product</h2>
+    <form action="/pantry/bookAndRemoveProduct" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Your Name:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Type: Product Type</label>
+            <input type="text" class="form-control" id="type" name="type" placeholder="Enter product type" required>
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity: Product Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter product quantity" required>
+        </div>
+        <div class="mb-3">
+            <label for="expiryDate" class="form-label">Expiry Date: Product Expiry Date</label>
+            <input type="date" class="form-control" id="expiryDate" name="expiryDate" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Book Product</button>
+    </form>
+</div>
+
+<div class="mt-5">
+    <h2>Reserved Products</h2>
+    <ul>
+        {{#reservedProducts}}
+            <li>
+                <strong>Type:</strong> {{type}}, 
+                <strong>Quantity:</strong> {{quantity}}, 
+                <strong>Expiry Date:</strong> {{expiryDate}}
+            </li>
+        {{/reservedProducts}}
+    </ul>
+</div>
+
+<form action="/logout" method="get">
+    <button type="submit" class="btn btn-danger btn-lg btn-block mt-3">Logout</button>
+</form>
+
+{{> footer}}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{>header}}
+{{>nav}}
+<body>
+    <h1>{{title}}</h1>
+    <div class="container">
+        <div class="row">
+            {{#products}}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{type}}</h5>
+                        <p class="card-text">Quantity: {{quantity}}</p>
+                        <p class="card-text">Expiry Date: {{expiryDate}}</p>
+                          <p class="card-text">ID: {{_id}}</p>
+            
+                    </div>
+                </div>
+            </div>
+            {{/products}}
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>
+
+
+

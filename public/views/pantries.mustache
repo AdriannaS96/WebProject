@@ -1,0 +1,19 @@
+{{> header}}
+{{> nav}}
+<h2>Browse Currently Available Items</h2>
+<form action="/viewItems" method="GET">
+    <div class="mb-3">
+        <label for="type" class="form-label">Type: Product Type</label>
+        <input type="text" class="form-control" id="type" name="type" placeholder="Enter product type" required>
+    </div>
+    <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity: Product Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter product quantity" required>
+    </div>
+    <div class="mb-3">
+        <label for="expiryDate" class="form-label">Expiry Date: Product Expiry Date</label>
+        <input type="date" class="form-control" id="expiryDate" name="expiryDate" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+    {{>footer}}

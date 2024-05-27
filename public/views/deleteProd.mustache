@@ -1,0 +1,26 @@
+{{> header}}
+{{> nav}}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title">Delete Product</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/admin/products/delete" method="POST">
+                        <div class="mb-3">
+                            <label for="productId" class="form-label">Product ID</label>
+                            <input type="text" class="form-control" id="productId" name="productId" required>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a href="/adminB" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> footer}}
